@@ -1,0 +1,45 @@
+@import 'src/styles/utils/breakpoints';
+
+.accountsSettings {
+  .listItem .icon {
+    display: none !important;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+
+  .moveAllButtonsContainer {
+    height: calc(80vh - 80px);
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .listItem:hover .icon {
+    display: block !important;
+  }
+
+  .listContainer {
+    height: 100%;
+
+    .containerContent {
+      max-height: 100%;
+      overflow-y: scroll;
+    }
+  }
+
+  @include bp(0px, 'tablet') {
+    .toolBar {
+      margin-top: 12px;
+    }
+    .listContainer {
+      height: auto;
+    }
+  }
+}
+
+
+
+

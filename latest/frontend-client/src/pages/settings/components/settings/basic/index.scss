@@ -1,0 +1,151 @@
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/vars';
+
+.basicSettings {
+
+  .fullWidth {
+    width: 100%;
+  }
+
+  .soundWave {
+    width: 40px;
+    margin-left: 24px;
+  }
+
+  .hiddenSoundwave {
+    width: 40px;
+    margin-left: 24px;
+    visibility: hidden;
+  }
+
+  .soundWave, .hiddenSoundwave {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    height: 80px;
+  }
+
+  .soundSelector {
+    position: relative;
+  }
+
+  .field {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .control {
+      display: flex;
+      align-items: center;
+
+      .MuiInput-root {
+        margin: auto;
+      }
+    }
+
+    @include bp(0px, 'tablet') {
+      .hiddenSoundwave, .soundWave {
+        display: none !important;
+      }
+
+      .soundSelector {
+        margin-left: 0px !important;
+      }
+    }
+
+    .soundSelector > div {
+      width: 212px !important;
+    }
+
+    .soundSelector {
+      padding-right: 42px;
+    }
+
+    .control {
+      width: 256px;
+
+      .deactivated-areas-toggle {
+        width: 50px !important;
+        display: block !important;
+        margin: auto;
+      }
+
+      @include bp(0px, 'mobile') {
+        .selectField {
+          width: 120px !important;
+        }
+      }
+    }
+
+    label {
+      @include bp('small') {
+        width: 200px;
+      }
+
+      > span {
+        font-weight: 600;
+        color: rgba($black, 0.85);
+
+        + small {
+          display: block;
+          font-size: 0.85em;
+          color: rgba($black, 0.85);
+        }
+      }
+
+      + .selectField[name="currency"] {
+        text-align: center;
+      }
+
+      + .uploadButton {
+        div {
+          &, span {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            @include bp(0px, 'mobile') {
+              font-size: 0.75em;
+            }
+          }
+        }
+      }
+
+      @include bp(568px) {
+        + .moveButton {
+          margin-left: -80px;
+        }
+      }
+
+    }
+
+    @include bp('tablet') {
+      &:nth-child(1) {
+        margin-top: -#{gutter() / 2} !important;
+      }
+    }
+
+    margin-top: gutter();
+
+    padding-left: gutter();
+    padding-right: gutter();
+    padding-bottom: gutter();
+
+    border-bottom: 1px solid rgba($black, 0.25);
+
+
+    .helpWrapper {
+      display: flex;
+      justify-content: space-around;
+      @include bp(0px, 'tablet') {
+        margin-right: gutter() * -1;
+      }
+    }
+  }
+
+  .selectField {
+    height: 48px;
+    text-align: left !important;
+    margin-right: 0px !important;
+  }
+}

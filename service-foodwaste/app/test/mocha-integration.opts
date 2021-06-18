@@ -1,0 +1,7 @@
+--require source-map-support/register
+--full-trace
+--bail
+--recursive
+--timeout=4000
+test/bootstrap-integration.js
+test/integration/**/*.test.js

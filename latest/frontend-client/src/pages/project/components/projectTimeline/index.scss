@@ -1,0 +1,142 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.timeline {
+  padding-bottom: 15px;
+
+  &Title {
+    color: $black;
+    text-transform: uppercase;
+    font-size: 1em;
+  }
+
+  &Icon {
+    width: 18px !important;
+    height: 18px !important;
+    margin-left: 2px;
+    background: $white;
+    border-radius: 50%;
+    border: 2px $tabActive solid;
+    margin-top: -6px;
+  }
+
+  &Step {
+    color: $black;
+
+    svg {
+      color: $tabActive !important;
+    }
+
+    &.is-inactive {
+      &, > span {
+        color: $main !important;
+      }
+
+      .timelinIcon {
+        border-color: lighten($main, 5%) !important;
+      }
+    }
+
+    > span {
+      font-size: 16px !important;
+      color: $black !important;
+    }
+
+    &Title {
+      font-weight: 300 !important;
+      margin: 0 !important;
+    }
+
+    &Title.last {
+      color: $main !important;
+      margin-top: 0px !important;
+      margin-bottom: 12px !important;
+    }
+  }
+
+  &Date {
+    text-transform: capitalize;
+    font-size: 1.17em !important;
+    margin-left: 10px !important;
+    margin-top: -4px !important;
+
+    .is-inactive & {
+      color: $main;
+    }
+  }
+
+  &Content {
+    margin-top: -44px !important;
+    margin-left: 25px !important;
+    padding-left: 126px !important;
+
+    &Inner {
+      margin-top: 10px !important;
+      font-size: 14px !important;
+      font-family: $mainFamily;
+    }
+  }
+
+  .timelineStep .timelineActionButtonSet .timelineActionButton {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-bottom: 24px;
+  }
+
+  .timelineStep .timelineActionButton:last-child {
+    margin-bottom: 0px;
+  }
+
+  .timelineStep .timelineActionButtonSet {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+
+  .timelineStep.timelineAction .timelineContent {
+    padding-left: 126px !important;
+  }
+
+  .timelineStep:first-child div.timelineIcon {
+    border-color: $main !important;
+  }
+
+  @include bp(0px, 'desktop') {
+    .timelineActionStartFollowUp span {
+      font-size: 11px !important;
+    }
+  }
+
+  .timelineStep + div {
+    margin-bottom: -9px;
+  }
+
+}
+
+.timelineStepTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@include bp('tablet', 1150px) {
+  .timelineDate, .timelineActionButton span {
+    font-size: 12px !important;
+  }
+  .timeline .timelineStep.timelineAction .timelineContent,
+  .timelineContent {
+    padding-left: 95px !important;
+
+    &.timelineButton {
+      padding-right: 0px !important;
+      padding-left: 25px !important;
+    }
+  }
+}
+
+@include bp('tablet', 1400px) {
+  .timeline .timelineStep.timelineAction .timelineContent,
+  .timelineContent .timelineButton {
+    padding-left: 55px !important;
+  }
+}

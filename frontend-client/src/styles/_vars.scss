@@ -1,0 +1,60 @@
+// COLORS
+$primary: #009688;
+$green:  #009688;
+$selection: #ff8900;
+$secondary: rgb(0,139,135);
+$main: rgb(197, 197, 197);
+$menuLink: #444444;
+$gray: #444;
+$lightMain: #fefeff;
+$white: #FFF;
+$black: #222;
+$darkMain: #eeeeee;
+$eSmileyBlue: #2196f3;
+$menuIconColor: rgb(117, 117, 117);
+$darkgray: rgba(0, 0, 0, 0.870588);
+$greenSuccess: rgba(67, 160, 71, 0.9);
+$greyError: rgba(#fefeff, 0.9);
+$inactiveIcon: rgba(0,0,0,0.54);
+$redError: #F44336;
+// -- GRAPH (COLORS)
+$primaryBarColor: #f99f1d;
+$secondaryBarColor: #a7cacc;
+$greyLight: #f2f2f2;
+
+$primaryLightColor: #ffe2ab;
+$secondaryLightColor: #e4efef;
+
+// -- STATUS (COLORS)
+$complete: #35de1e;
+$error: rgba(#F00, 1.0);
+$warning: #ff8900;
+$corrective: #ebe921;
+$confirmed: #8dc63f;
+
+// GUTTERS
+$gutter: 24px;
+
+// BREAKPOINT SIZES
+$mobile: 480px;
+$smallTablet: 601px;
+$tablet: 768px;
+$tabletLarge: 1024px;
+$desktop: 1280px;
+$desktopHD: 1920px;
+
+// TABS
+$tab: #8bd7fa;
+$tabActive: #29b6f6;
+// TABLE
+$tableHeader: #e4eff0;
+
+// FONTS
+$mainFamily: "Lato", "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$menuCollapsedWidth: 72px;
+$menuWidth: 260px;
+$menuMobileWidth: 304px;
+$topNavbarHeight: 64px;
+$touchTargetSize: 1cm;
+$bigTouchTargetSize: 1.5cm;

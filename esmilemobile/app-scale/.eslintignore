@@ -1,0 +1,7 @@
+**/*.snap
+node_modules/*
+__snapshots__/*
+android/*
+ios/*
+misc/*
+resources/*

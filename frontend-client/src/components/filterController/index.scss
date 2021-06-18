@@ -1,0 +1,303 @@
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.filterController {
+  width: 100%;
+
+  .filterControllerColumn {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    height: 100%;
+
+    .btn {
+      margin-left: gutter();
+      margin-right: gutter();
+    }
+  }
+
+  .dateSelector {
+    position: relative;
+    margin-bottom: 24px !important;
+    padding-left: gutter();
+    padding-right: gutter();
+
+    .dateContainer {
+      margin-top: 8px;
+    }
+  }
+
+  .DateRangePicker .DateRangePickerInput {
+    margin-top: 2px;
+    padding-left: 24px !important;
+
+    .DateInput {
+      line-height: 24px !important;
+      text-align: center !important;
+    }
+
+    input {
+      height: 24px !important;
+      padding: 1px 0px !important;
+      font-size: 18px !important;
+      font-family: sans-serif !important;
+      line-height: 1.15 !important;
+      text-align: center !important;
+    }
+
+    .DateInput_input__focused {
+      border-bottom: 0px !important;
+    }
+  }
+
+  .DateRangePickerInput_calendarIcon {
+    padding: 12px 12px 12px 0px;
+    position: absolute;
+    z-index: 30;
+    left: 0px;
+    bottom: -11px;
+  }
+
+  .filterControllerExtraFiltersContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px !important;
+    margin-bottom: 24px !important;
+
+    .itemSelectField hr {
+      bottom: 5px !important;
+    }
+
+    .accountSelector {
+      margin-top: 8px;
+      height: 48px;
+
+      & .customerSelector {
+
+        @include bp(0px, 'tablet') {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
+      }
+
+    }
+
+    .filterControllerResetBtn {
+      margin-top: 24px;
+    }
+
+  }
+
+  .itemSelectField svg {
+    margin-right: 9px !important;
+  }
+
+  .accountSelector {
+    padding-left: gutter();
+    padding-right: gutter();
+  }
+
+  .domainSelector {
+    display: flex;
+    flex: 1;
+    position: relative;
+    flex-direction: column;
+
+    .domainSelectorRow {
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      margin-bottom: 12px;
+    }
+
+    .itemSelectField > div > label {
+      color: rgba(0, 0, 0, 0.87) !important;
+    }
+
+    .itemSelectField > div:after {
+      background-color: #009688 !important;
+    }
+
+    .itemSelectField:not(.disabled) {
+      > label {
+        color: rgba(0, 0, 0, 0.87) !important;
+      }
+    }
+
+    .itemSelectField {
+      margin-left: 12px;
+      margin-right: 12px;
+      width: 100%;
+
+      > div {
+        width: 100% !important;
+      }
+    }
+
+    @include bp('tablet') {
+      .itemSelectField {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .filterController {
+    .dateIntervalSelector .periodButtonsContainer .btn, .dateRangeSelector .periodButtonsContainer .btn {
+      margin-bottom: 0px !important;
+    }
+  }
+}
+
+@media (max-width: 601px) {
+  .filterController .accountSelector {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterController {
+    .dateIntervalSelector .dateContainer .DateInput, .dateRangeSelector .dateContainer .DateInput {
+      width: auto !important;
+    }
+
+    .dateSelector {
+      margin-bottom: 0px !important;
+    }
+
+    .periodButtonsContainer {
+      flex-direction: column;
+
+      .btn {
+        margin-left: 0px !important;
+        margin-bottom: 24px !important;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .mainAppWrapper:not(.menu-active) {
+    .filterController {
+      display: flex;
+      margin: 0px !important;
+      width: 100% !important;
+
+      .dateSelector {
+        width: 33.3333333333% !important;
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+
+      @media (min-width: 1280px) and (max-width: 1366px) {
+        .dateSelector.dateRangeSelector {
+          width: 50% !important;
+        }
+      }
+
+      .filterControllerExtraFiltersContainer {
+        display: flex;
+        width: 66.66666% !important;
+        align-items: flex-start;
+        margin-right: 0 !important;
+        flex-direction: row;
+      }
+
+      .filterControllerExtraFiltersContainer:not(.hasDomainSelector) {
+        flex-direction: column !important;
+        align-items: flex-end !important;
+      }
+
+      @media (min-width: 1280px) and (max-width: 1366px) {
+        &.range {
+          .filterControllerExtraFiltersContainer {
+            width: 50% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .filterController {
+    display: flex;
+    margin: 0px !important;
+    width: 100% !important;
+
+    .dateSelector {
+      width: 33.3333333333% !important;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+    @media (min-width: 1280px) and (max-width: 1366px) {
+      .dateSelector.dateRangeSelector {
+        width: 50% !important;
+      }
+    }
+
+    .filterControllerExtraFiltersContainer {
+      display: flex;
+      align-items: flex-start;
+      margin-right: 0 !important;
+      flex-direction: row;
+    }
+
+    .filterControllerExtraFiltersContainer:not(.hasDomainSelector) {
+      flex-direction: column !important;
+      align-items: flex-end !important;
+    }
+
+    @media (min-width: 1280px) and (max-width: 1366px) {
+      &.range {
+        .filterControllerExtraFiltersContainer {
+          width: 50% !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+
+  .filterController .filterControllerExtraFiltersContainer {
+    .accountSelector {
+      width: 100% !important;
+
+      .customerSelector, .customerSelectorForm {
+        max-width: 100% !important;
+        text-align: left !important;
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+.mainAppWrapper.menu-active {
+  .filterController .filterControllerExtraFiltersContainer {
+    .accountSelector {
+      width: 100% !important;
+
+      .customerSelector, .customerSelectorForm {
+        max-width: 100% !important;
+        text-align: left !important;
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+
+.filterController .filterControllerExtraFiltersContainer {
+  display: block !important;
+}
+
+.filterController .filterControllerColumn {
+  margin-top: 8px;
+  align-items: flex-end;
+}
+

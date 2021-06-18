@@ -1,0 +1,100 @@
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+.dateIntervalSelector, .dateRangeSelector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include bp(0px, 'tablet') {
+    max-width: 100%;
+    min-width: 0px;
+  }
+  @include bp('large') {
+    align-items: flex-start;
+  }
+  .periodButtonsContainer {
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    .btn {
+      margin-bottom: 16px;
+      min-width: 48px !important;
+      span {
+        text-transform: none !important;
+        font-weight: 500 !important;
+      }
+      flex: 1;
+      @include bp('large') {
+        margin-bottom: 0px;
+      }
+    }
+    .btn + .btn {
+      margin-left: 9px;
+    }
+  }
+  .DateRangePickerInput {
+    width: 100% !important;
+    text-align: center !important;
+    white-space: nowrap;
+    svg {
+      color: darken($main, 25%) !important;
+    }
+  }
+
+  .dateIntervalSelectorDropdown {
+    .MuiSelect-root {
+      text-align: center;
+      &:focus {
+        background-color: transparent;
+      }
+    }
+
+    .MuiSelect-icon {
+      display: none;
+    }
+  }
+
+  .dateIntervalSelectorDropdown, .dateRangeSelectorDropdown {
+    font-size: 1.1em !important;
+    margin-top: -15px !important;
+    width: 100% !important;
+  }
+  .DateRangePicker {
+    width: 100% !important;
+  }
+  .dateContainer {
+    min-height: 48px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    align-items: center;
+    justify-content: stretch;
+    align-items: center;
+    flex-direction: row;
+    @include bp(0px, 'tablet') {
+      margin-left: -16px;
+      margin-right: -16px;
+      .DateInput {
+        padding: 0px !important;
+        width: 110px !important;
+      }
+    }
+    .arrow-placeholder {
+      width: 48px;
+      height: 48px;
+    }
+    @include bp('large') {
+      justify-content: flex-start;
+    }
+
+    > div {
+      width: 100% !important;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+      align-items: baseline;
+    }
+  }
+}

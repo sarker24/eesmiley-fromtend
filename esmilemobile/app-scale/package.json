@@ -1,0 +1,70 @@
+{
+  "name": "foodwaste",
+  "version": "2.1.1",
+  "private": true,
+  "license": "UNLICENSED",
+  "author": "Daniel Constantin <daco@esmiley.dk>",
+  "engines": {
+    "node": "^12.18.4"
+  },
+  "scripts": {
+    "start": "react-native start",
+    "test": "npm run lint && jest",
+    "cover": "jest --coverage",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "android": "react-native run-android",
+    "log-android": "react-native log-android",
+    "android-release": "react-native run-android --variant=release",
+    "assemble-android-release": "(mkdir android/app/src/main/assets || true) && npm run bundle-android-release && npm run build-android-release",
+    "bundle-android-release": "react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "build-android-release": "cd android && ./gradlew assembleRelease",
+    "release-build": "(mkdir android/app/src/main/assets || true) && react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/build/intermediates/res/merged/release/ && rm -rf android/app/src/main/res/drawable-* && rm -rf android/app/src/main/res/raw/* && cd android && ./gradlew app:assembleRelease && cd .."
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.2",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "react": "16.13.1",
+    "react-native": "0.63.4",
+    "react-native-ble-manager": "^7.4.1",
+    "react-native-bluetooth-state-manager": "^1.1.0",
+    "react-native-webview": "^11.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/runtime": "^7.8.4",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^25.1.0",
+    "@types/react": "^16.8.23",
+    "@types/react-native": "^0.63.46",
+    "@types/react-test-renderer": "^16.8.3",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-typescript-transformer": "^1.0.11",
+    "react-test-renderer": "16.13.1",
+    "ts-jest": "^25.1.0",
+    "typescript": "^3.9.7"
+  },
+  "jest": {
+    "preset": "react-native",
+    "transform": {
+      "\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.[t]s?(x)",
+      "**/?(*.)+(spec|test).[t]s?(x)"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "globals": {
+      "ts-jest": {
+        "babelConfig": true
+      }
+    }
+  }
+}

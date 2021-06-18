@@ -1,0 +1,200 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.projectPercentageProgress {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+@media (min-width: $tablet) and (max-width: $tabletLarge - 1) {
+  .mainAppWrapper:not(.menu-active) {
+    .projectStatus {
+      .projectContainer {
+        margin-left: -12px;
+        margin-right: -12px;
+      }
+
+      .project {
+        width: calc(50% - 24px);
+        float: left;
+        margin-top: 0 !important;
+        margin-right: 12px;
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
+@include bp('tabletLarge') {
+  .projectStatus {
+    width: calc(33.333333333333% - 24px);
+  }
+}
+
+.projectStatus .newProjectBtnContainer {
+  margin-top: 0 !important;
+}
+
+@media (min-width: $tabletLarge) and (max-width: $desktop - 1) {
+  .mainAppWrapper.menu-active {
+    .projectContainer {
+      margin-bottom: 0px !important;
+    }
+
+    .projectStatus {
+      .project {
+        width: calc(50% - 12px);
+        float: left;
+        margin-top: 0 !important;
+        margin-bottom: 24px !important;
+      }
+
+      .project:nth-child(odd) {
+        margin-right: 24px;
+      }
+    }
+  }
+}
+
+.projectStatus {
+  padding: 0 gutter() * 2;
+
+  .project {
+    padding: 1em;
+    margin: 1em 0em;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+
+    @include bp(0px, 'mobile') {
+      padding-top: 0.4em;
+      padding-bottom: 0.4em;
+    }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    circle {
+      stroke: $primary !important;
+    }
+
+    &Container {
+      flex: 1 1 0;
+      min-width: 0;
+
+      p {
+        width: 256px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 0;
+      }
+    }
+  }
+
+  &Head, &Footer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &Head {
+    min-width: 0;
+    width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &Footer {
+    width: 25%;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  &Title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    margin-left: 1em;
+    text-align: left;
+  }
+
+  &Period {
+    text-transform: lowercase;
+  }
+
+  &Period,
+  &Icon {
+    .project & {
+      margin-left: 1em;
+      display: flex;
+    }
+  }
+
+  &Title {
+    .project & {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &Icon {
+    position: relative;
+
+    .projectStatusProgress {
+      position: relative;
+
+      &Percentage {
+        font-size: 0.85em;
+        position: absolute;
+        padding: 15%;
+        margin: 40% 25%;
+        top: -50%;
+        left: -50%;
+        transform: translate(50%, 50%);
+        z-index: 99;
+      }
+
+      &Bar {
+        transform: rotate(-90deg);
+      }
+    }
+
+
+  }
+
+  .project:first-child {
+    margin-top: 0;
+  }
+}
+
+.projectStatus.has-projects {
+  padding-top: spacing();
+  padding-bottom: spacing();
+
+  .projectContainer {
+    margin-bottom: spacing();
+  }
+}
+
+.projectStatus {
+  .projectProgress {
+    position: relative;
+    display: block;
+    margin: 6px auto;
+
+    .projectPercentage {
+      font-size: 12px;
+      width: 40px;
+      height: 40px;
+      border: 2px solid $tabActive;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}

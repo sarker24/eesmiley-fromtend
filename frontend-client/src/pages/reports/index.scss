@@ -1,0 +1,350 @@
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/utils/grid';
+@import 'src/styles/vars';
+
+.reportsPageContainer {
+  padding-top: gutter();
+  padding-bottom: gutter() * 2;
+  overflow: hidden;
+
+  height: calc(100vh - 68px);
+  margin-right: -8px;
+
+
+  > .timeFilterContainer {
+
+    padding-top: 10px;
+    padding-bottom: 14px;
+    margin-bottom: 26px;
+    margin-top: 12px;
+    &.floating {
+      background: #fff;
+      transition: 0.3s box-shadow;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      box-shadow: 0px 3px 6.8px 0.2px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    @include bp(0px, 'mobile') {
+      padding-bottom: 24px !important;
+      padding-top: 6px !important;
+      .timeFilterNavBtn {
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0px !important;
+      }
+      .DateRangePickerInput_calendarIcon {
+        display: none !important;
+      }
+      .timeFilter .timeFilterInner .DateRangePickerInput .DateInput {
+        width: 50% !important;
+      }
+      .dateRangeFrom {
+        left: 0px !important;
+      }
+      .dateRangeTo {
+        left: 50% !important;
+      }
+    }
+
+    .timeFilter > div {
+      justify-content: flex-start !important;
+    }
+
+    @include bp('tablet', 'tabletLarge') {
+      .timeFilter {
+        .dateRangeTo  {
+          left: calc(50% - 13px);
+          width: auto !important;
+        }
+      }
+    }
+
+    @include bp(0px, 'tabletLarge') {
+      .timeFilter {
+        height: auto !important;
+        margin: 0px;
+        padding: 0px !important;
+        .timeFilterInner {
+          flex-direction: column;
+          width: 100%;
+          .intervalSelector, .dateGroupingSelector {
+            width: 100% !important;
+            max-width: 100%;
+          }
+          .DateInput {
+            width: calc(50% - 48px) !important;
+          }
+          .timeFilterDateRangePicker {
+            width: 100%;
+            .DateRangePicker {
+              width: 100%;
+              .DateRangePickerInput {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .filterBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 60px;
+    border-radius: 30px !important;
+    height: 60px !important;
+    width: 166px !important;
+    z-index: 1;
+
+    button {
+      border-radius: 30px !important;
+      height: 60px !important;
+      width: 166px !important;
+      * {
+        text-transform: none !important;
+      }
+
+      box-shadow: 0px !important;
+    }
+  }
+  .filterBtn.closed button {
+    box-shadow: 0px 3px 6.8px 0.2px rgba(0, 0, 0, 0.35) !important;
+  }
+
+  .filterController .filterControllerExtraFiltersContainer .filterControllerColumn {
+    padding-left: gutter();
+    padding-right: gutter();
+    .accountSelector {
+      .customerSelectorForm {
+        width: 100% !important;
+      }
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+    }
+    .searchBtn {
+      margin-top: gutter() * 2;
+    }
+  }
+  .DateRangePickerInput {
+    border-bottom: 1px solid rgb(224, 224, 224);
+  }
+  .DateInput_input__focused {
+    border-bottom: 0px !important;
+    padding-bottom: 1px !important;
+  }
+  .DateInput_input {
+    padding: 1px 0px !important;
+  }
+  .DateRangePickerInput_calendarIcon {
+    padding: 0px !important;
+  }
+  .reportsDashboardsContainer {
+    margin-left: gutter();
+    margin-right: gutter();
+    display: flex;
+    iframe {
+      width: 100%;
+      border: 0 !important;
+      height: 100%;
+    }
+    .placeholder {
+      width: 100%;
+      height: 100%;
+      flex: 1 100%;
+    }
+
+    .iframeContainer {
+      width: 100%;
+      display: flex;
+      height: calc(100vh - 296px);
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .searchBar {
+      padding-left: gutter() * 2;
+      padding-right: gutter() * 2;
+      margin-bottom: gutter();
+    }
+    .projectsBlock.disabled {
+      cursor: not-allowed;
+    }
+    .projectsBlock.disabled * {
+      pointer-events: none;
+    }
+  }
+
+  .reportsDashboard {
+    width: 100%;
+  }
+
+  .DateRangePicker .DateInput, .DateRangePicker .DateInput__display-text {
+    padding: 0px 8px !important;
+  }
+
+  @include bp('tabletLarge') {
+    .DateRangePicker .DateInput, .DateRangePicker .DateInput__display-text {
+      padding: 0px 8px !important;
+    }
+  }
+
+  @include bp(0px, 'tablet') {
+    .DateRangePicker .DateInput, .DateRangePicker .DateInput__display-text {
+      padding: 0 12px !important;
+    }
+    .timeFilterContainer {
+      .DateRangePickerInput_calendarIcon {
+        display: none !important;
+      }
+      .timeFilterToolbar {
+        padding: 0px !important;
+        .timeFilterInner .DateInput {
+          width: 50% !important;
+        }
+        .dateRangeFrom {
+          left: 0px;
+        }
+        .dateRangeTo {
+          left: 50%;
+        }
+      }
+    }
+  }
+
+  .timeFilterContainer.floating {
+    position: fixed;
+    width: calc(100% - 72px);
+    z-index: 1;
+    left: 72px;
+    right: 0;
+    top: $topNavbarHeight;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    .timeFilter {
+      margin-left: 0px;
+      margin-right: 0px;
+      .timeFilterInner {
+        margin-top: -8px;
+      }
+    }
+  }
+
+  @include mq($until: 'tablet') {
+    .timeFilterContainer.floating {
+      width: 100%;
+      padding-left: 8px;
+      padding-right: 8px;
+      left: 0px;
+    }
+
+    .filterBtn {
+      right: 30px;
+    }
+  }
+
+  .gettingStartedContainer {
+    display: flex;
+    align-items: center;
+    margin-left: gutter();
+    margin-right: gutter();
+
+    > div {
+      flex: 1;
+      h1 {
+        margin: 0px;
+        margin-bottom: gutter() * 2;
+        text-align: left;
+        font-weight: 100;
+      }
+      p {
+        text-align: left;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.08px;
+      }
+    }
+
+    @include bp('tabletLarge', 'desktop') {
+      > div {
+        margin-top: 80px !important;
+        width: 47vw;
+      }
+    }
+    @include bp('desktop') {
+      > div {
+        margin-top: 80px !important;
+        width: 27vw;
+      }
+    }
+  }
+}
+
+@include bp(0px, 390px) {
+  .reportsPageContainer .timeFilter {
+    .dropDownIcon {
+      display: none !important;
+    }
+  }
+}
+
+@include bp(0px, 'tabletLarge') {
+
+  .reportsPageContainer.floating {
+    margin-top: 164px;
+    height: calc(100vh - 234px);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .reportsPageContainer .reportsDashboardsContainer, .gettingStartedContainer, .iframeContainer .placeholder {
+    min-height: calc(100vh - 296px);
+  }
+  .reportsPageContainer {
+    .filterControllerColumn {
+      padding-top: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .reportsPageContainer .reportsDashboardsContainer, .gettingStartedContainer, .iframeContainer .placeholder {
+    min-height: calc(100vh - 410px);
+  }
+}
+
+.DateRangePicker_picker {
+  z-index: 5000 !important;
+}
+
+@include bp(0px, 'tabletLarge') {
+
+  .mainAppWrapper.menu-active .reportsPageContainer {
+    .timeFilterToolbar .timeFilterInner .DateInput {
+      width: 50% !important;
+    }
+  }
+}
+
+@include bp('tablet', 'desktop') {
+  .mainAppWrapper.menu-active .reportsPageContainer {
+
+    .DateRangePicker .DateInput, .DateRangePicker .DateInput__display-text {
+      padding: 0px 12px !important;
+    }
+
+    .timeFilter {
+      .dateRangeTo {
+        left: 50% !important;
+      }
+    }
+  }
+}
+
+@include bp('tabletLarge', 'desktop') {
+  .mainAppWrapper.menu-active .reportsPageContainer {
+    .DateRangePicker .DateInput, .DateRangePicker .DateInput__display-text {
+      padding: 0px 12px !important;
+    }
+  }
+}

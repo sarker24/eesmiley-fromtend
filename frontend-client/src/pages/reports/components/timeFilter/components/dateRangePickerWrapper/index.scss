@@ -1,0 +1,64 @@
+@import 'src/styles/utils/grid';
+
+.timeFilter .timeFilterDateRangePicker {
+  width: 328px;
+  position: relative;
+  height: 72px;
+  .dateRangeFrom, .dateRangeTo {
+    position: absolute;
+    line-height: 22px! important;
+    top: 38px;
+    font-size: 16px !important;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    z-index: 3;
+    transform: scale(0.75) translate(0px, -28px);
+    transform-origin: left top 0px;
+    user-select: none;
+    font-family: Roboto, sans-serif;
+    color: rgba(0, 0, 0, 0.3) !important;
+    font-weight: 100 !important;
+  }
+  .dateRangeFrom {
+    left: 36px;
+  }
+  .dateRangeTo {
+    left: 165px;
+  }
+  .dropDownIcon {
+    position: absolute;
+    right: gutter();
+    z-index: 3;
+    cursor: pointer;
+    bottom: 16px;
+    fill: rgb(224, 224, 224) !important;
+  }
+  .DateRangePicker {
+    width: 328px;
+    .DateRangePicker__picker {
+      z-index: 5000 !important;
+    }
+    cursor: pointer;
+    margin-top: 34px;
+    .DateRangePickerInput {
+      width: 328px;
+      padding-bottom: 1px !important;
+      font-family: Roboto, sans-serif;
+      font-size: 16px !important;
+      input {
+        color: rgba(0, 0, 0, 0.87) !important;
+      }
+      input::placeholder {
+        color: rgba(0, 0, 0, 0.3) !important;
+      }
+    }
+    .DateRangePickerInput_calendarIcon {
+      margin-left: gutter();
+      margin-right: 4px !important;
+      svg {
+        width: auto;
+        height: auto;
+        fill: #858585 !important;
+      }
+    }
+  }
+}

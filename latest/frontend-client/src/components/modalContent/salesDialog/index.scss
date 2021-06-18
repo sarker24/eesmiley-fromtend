@@ -1,0 +1,248 @@
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/vars';
+
+.salesDialog {
+
+  .guestInput.disabled {
+    opacity: 0.45;
+  }
+
+  .showSalesHistoryButton {
+    width: 100%;
+  }
+
+  dd {
+    -webkit-margin-start: 0;
+    padding: 10px 0;
+  }
+
+  dt {
+    font-size: 12pt;
+    font-weight: 700;
+  }
+
+  .salesColumns {
+    display: flex;
+    flex-direction: column;
+
+    @include bp('tablet') {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .wasteData {
+      h4 {
+        text-align: center;
+        margin: 0;
+      }
+
+      &Points {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+
+        max-width: 80%;
+      }
+    }
+
+    .salesData {
+      display: flex;
+      flex-direction: column;
+
+      .helpWrapper {
+        @include bp(0px, 'tabletLarge') {
+          width: 100%;
+          > div {
+            width: 100%;
+          }
+          .inputWrapper, .inputWrapper .input {
+            width: 100% !important;
+            font-size: 14px !important;
+          }
+          font-size: 14px !important;
+
+          @include bp(0px, 'tablet') {
+
+            .inputWrapper, .inputWrapper .input {
+              font-size: 12px !important;
+            }
+            font-size: 12px !important;
+          }
+        }
+
+        .helpAnchor {
+          width: 48px;
+          margin-top: 1.435em;
+          margin-left: -5px;
+        }
+      }
+
+      input {
+        color: $black !important;
+      }
+
+      label {
+        color: rgba(0, 0, 0, 0.54) !important;
+      }
+
+      .input {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  &Footer {
+
+    display: flex;
+    flex-flow: row wrap;
+    margin: 24px 0;
+
+    > .historyButton {
+      margin-right: auto;
+    }
+
+    @include bp(0px, 'tablet') {
+      button {
+        width: 100%;
+      }
+
+      > .historyButton {
+        order: 2;
+        width: 100%;
+        margin-top: 24px;
+      }
+
+      > :not(.historyButton) {
+        flex: 1 1 45%;
+      }
+    }
+  }
+
+}
+
+.salesDialog {
+  .salesHistory {
+
+    padding: 0;
+
+    .containerContent {
+      max-height: 320px;
+      overflow: auto;
+    }
+
+    transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    transition-property: height;
+
+    Table {
+      tr {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .salesHistory.hidden {
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+
+    & > * {
+      height: 0;
+    }
+  }
+
+  .simpleCalendar {
+    .calendar .day.passed {
+      &.sale:not(.selectedDate) {
+        .day {
+          border: 2px solid $confirmed;
+
+          &:hover {
+            background-color: $confirmed;
+            color: $white;
+          }
+        }
+
+        .selectEffect {
+          background-color: $confirmed;
+        }
+      }
+
+      &.sale.selectedDate .day {
+        background-color: $confirmed;
+        color: $white;
+      }
+
+      .day {
+        font-weight: 600;
+        letter-spacing: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .registerSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    color: $white;
+    background: $secondary;
+
+    .leftSection, .rightSection {
+      display: flex;
+      flex-direction: column;
+      padding: 0.95em 1.5em;
+      margin-bottom: 0.25em;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .leftSection {
+      p {
+        margin: 0;
+
+        &:first-of-type {
+          margin-bottom: 0.5em;
+          font-size: 0.85em;
+        }
+      }
+    }
+
+    .rightSection {
+      p {
+        font-size: 2em;
+      }
+    }
+  }
+
+  &Sales {
+    margin-top: 1em;
+
+    & table th {
+      font-size: 0.5em !important;
+    }
+
+    & table th, & table td {
+      &:first-of-type {
+        width: 118px !important;
+      }
+
+      &:nth-child(2), &:nth-child(3) {
+        width: 95px !important;
+      }
+
+      &:nth-child(4), &:nth-child(7) {
+        width: 20px !important;
+      }
+
+      text-align: center !important;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/vars';
+
+.recipientDialog {
+  .nameInput {
+      margin-bottom: 16px;
+  }
+
+  .phoneInput {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .phoneCountryCodeInput {
+    margin-right: gutter() * 0.5;
+    input {
+      text-align: right !important;
+      margin-top: 2px !important;
+    }
+  }
+}
+.alarmsPanel {
+  .messageHelpText {
+    font-size: 14px;
+    margin-top: gutter() * 0.5;
+    float: right;
+  }
+  .messageHelpText.error {
+    color: $redError;
+  }
+  .recipientsList {
+    margin-top: gutter();
+    table {
+      margin-bottom: gutter() * 2;
+
+      td:nth-child(1) {
+        width: 60% !important;
+      }
+      tr {
+        cursor: pointer !important;
+        svg {
+          color: rgba(34, 34, 34, 0.65) !important;
+        }
+      }
+      tbody {
+        td:nth-child(2) > div > div > div {
+          margin: auto !important;
+        }
+      }
+    }
+    .list {
+
+      margin-bottom: gutter() * 2;
+      min-height: 36px;
+    }
+    .recipientBtns {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding-left: 2px;
+      padding-right: 2px;
+    }
+  }
+  .field {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    .helpWrapper {
+      width: 48px;
+      height: 48px;
+    }
+    h2 {
+      color: rgba(0, 0, 0, 0.87);
+    }
+    .control {
+      width: 512px;
+    }
+    .btn svg {
+      fill: $primary !important;
+    }
+    label {
+      margin-right: gutter() * 2;
+      @include bp('small') {
+        width: 200px;
+      }
+
+      > span {
+        font-weight: 600;
+        color: rgba($black, 0.85);
+
+        + small {
+          display: block;
+          font-size: 0.85em;
+          color: rgba($black, 0.85);
+        }
+      }
+    }
+
+    @include bp('tablet') {
+      &:nth-child(1) {
+        margin-top: -#{gutter() / 2} !important;
+      }
+    }
+
+    margin-top: gutter();
+
+    padding-left: gutter();
+    padding-right: gutter();
+    padding-bottom: gutter();
+
+  }
+
+  @include bp(0px, 'tabletLarge') {
+    .field {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px !important;
+      .control {
+        width: 100%;
+        > div {
+          width: 100% !important;
+        }
+      }
+      .helpWrapper {
+        display: none;
+      }
+    }
+  }
+  .saveButton{
+    float: right;
+  }
+  .buttons {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}

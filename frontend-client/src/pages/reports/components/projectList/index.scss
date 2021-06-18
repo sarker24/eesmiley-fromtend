@@ -1,0 +1,120 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/utils/breakpoints';
+@import '../../../../styles/utils/grid';
+
+.reportsPageContainer {
+  .filterDialog .filterDialogOption .projectsBlock {
+    width: calc(100% + 48px) !important;
+    min-width: 384px !important;
+    overflow: hidden;
+    margin-left: -24px;
+    margin-right: -24px;
+    .searchField {
+      overflow: hidden !important;
+    }
+    .activeProject{
+      background: #e0e0e0 !important;
+    }
+    .project {
+      .accountText {
+        color: #757575 !important;
+        font-size: 10px !important;
+        text-transform: uppercase;
+        font-weight: 500 !important;
+      }
+    }
+    h3 {
+      font-size: 16px !important;
+      font-weight: normal !important;
+      line-height: 1.5;
+      letter-spacing: 0.1px;
+    }
+
+    .projectList {
+      padding-top: 0px !important;
+      overflow: auto;
+      max-height: 234px;
+      padding-left: gutter() * 2;
+      padding-right: gutter() * 2;
+    }
+    .projectListShadow {
+      height: 24px;
+      width: 110%;
+      margin-left: -4%;
+      box-shadow: 0px -7px 6.9px 0.1px rgba(0, 0, 0, 0.1);
+    }
+    .projectList.noResults {
+      text-align: center;
+    }
+
+    .searchBar {
+      display: flex !important;
+    }
+
+    .sorter {
+      text-align: right;
+      display: flex;
+      align-items: center;
+      height: 48px;
+      margin-top: 20px;
+    }
+  }
+
+  .projectsBlock.disabled .searchBar {
+    opacity: 0.3 !important;
+  }
+
+  .projectList {
+    th {
+      font-size: 16px !important;
+    }
+  }
+
+  @include bp(0px, 'tablet') {
+    .projectsBlock {
+      width: 100% !important;
+      overflow: auto;
+      min-width: 0px !important;
+      border-right: 0px;
+      .projectList {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+    }
+    .projectsBlock.disabled {
+      display: none;
+    }
+    .project:last-child {
+      border-bottom: 0px;
+    }
+  }
+
+  .searchBar .icon {
+    fill: #858585 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .project {
+    cursor: pointer;
+    color:$black;
+
+    h3{
+      margin:0;
+    }
+    p {
+      font-size: 14px;
+    }
+    h3,p{
+      display:block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    p {
+      margin-top: 0.7em;
+      margin-bottom: 0;
+    }
+  }
+
+}

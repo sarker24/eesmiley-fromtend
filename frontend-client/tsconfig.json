@@ -1,0 +1,65 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    // Don't emit; allow Babel to transform files
+    "noEmit": true,
+    // Disallow features that require cross-file information for emit.
+    "isolatedModules": true,
+    "baseUrl": ".",
+    "skipLibCheck": true,
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "src/components/*",
+        "src/pages/*",
+        "schemas/*",
+      ]
+    },
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "target": "esnext",
+    "jsx": "react",
+    // Search under node_modules for non-relative imports
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "es2017",
+      "es2019.array",
+      "dom"
+    ],
+    //"downlevelIteration": true,
+    "types": [
+      "node",
+      "webpack",
+      "webpack-env",
+      "react",
+      "react-dom",
+      "react-router",
+      "react-helmet",
+      "react-redux",
+      "react-intl",
+      "redux",
+      "lodash",
+      "material-ui",
+      "jest",
+      "redux-mock-store"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+      "./src/declarations"
+    ]
+  },
+  "include": [
+    "./src",
+    "./lib",
+    "./__mocks__"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage"
+  ]
+}

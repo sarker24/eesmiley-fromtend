@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "node_modules",
+    "dist",
+    "coverage",
+    "./src/**/*.test.tsx",
+    "./src/**/*.test.ts",
+    "./src/test-utils/",
+    "./__mocks__/"
+  ]
+}

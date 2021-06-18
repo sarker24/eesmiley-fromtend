@@ -1,0 +1,130 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.projectStatus {
+
+  &Panel {
+    width: span(12);
+
+    @include bp(0px, 'tablet') {
+      padding-bottom: gutter() * 2;
+      margin-bottom: gutter() * 2;
+    }
+
+    @include bp('tablet') {
+      width: span(5);
+      border-right: 1px solid $main;
+      border-bottom: none;
+    }
+    padding: 0;
+    margin-left: 0;
+    display: block;
+    flex-direction: column;
+    border-bottom: 1px solid $main;
+
+    @include bp('tablet') {
+      padding-right: gutter() * 2;
+    }
+
+    &Header {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      margin: 10% 0;
+    }
+
+    &Headline {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+
+      h3 {
+        color: $black;
+        text-transform: uppercase;
+        font-size: 1em;
+      }
+    }
+
+    .projectDetails {
+      dt {
+        text-transform: uppercase;
+        font-weight: 800;
+        color: $darkgray;
+        margin-bottom: 0.7em;
+      }
+
+      dl {
+        margin-bottom: 24px;
+        font-size: 16px;
+      }
+
+      dl:last-child {
+        margin-bottom: 0px;
+      }
+
+      dd {
+        font-size: 14px;
+        margin: 0 0 10px 0;
+      }
+
+      dd:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    .projectInformationTitle {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0 !important;
+
+      span {
+        flex: 1;
+      }
+
+      .projectEditButton {
+        svg {
+          color: $inactiveIcon !important;
+        }
+
+        &:hover svg {
+          color: $secondary !important;
+        }
+      }
+    }
+
+    .projectProgress {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 120px;
+
+      .projectPercentage {
+        margin: 0;
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        font-size: 30px;
+        text-align: center;
+        line-height: 90px;
+        width: 90px;
+        height: 90px;
+        border: 3px solid #29b6f6;
+        border-radius: 50%;
+        color: $black;
+      }
+
+      .circularPercentage {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+}
+

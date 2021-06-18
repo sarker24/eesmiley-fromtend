@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg class="verdensmaal-loader" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 390.5 391" style="enable-background:new 0 0 390.5 391;" xml:space="preserve">
+	<style type="text/css">
+		.path {animation: loader-fade 1.275s infinite reverse ease-in-out;}
+    .st1{fill:#FE1A38; animation-delay: -1.2s}
+    .st2{fill:#EDA52A; animation-delay: -1.125s}
+    .st3{fill:#009E29; animation-delay: -1.05s}
+    .st4{fill:#E4122A; animation-delay: -.975s}
+    .st5{fill:#FE3719; animation-delay: -.9s}
+    .st6{fill:#00BCE2; animation-delay: -.825s}
+    .st7{fill:#FEC200; animation-delay: -.75s}
+    .st8{fill:#BC1241; animation-delay: -.675s}
+    .st9{fill:#FE6916; animation-delay: -.6s}
+    .st10{fill:#FE0B69; animation-delay: -.525s}
+    .st11{fill:#FE9E00; animation-delay: -.45s}
+    .st12{fill:#CF8A1E; animation-delay: -.375s}
+    .st13{fill:#007F3E; animation-delay: -.3s}
+    .st14{fill:#0096DA; animation-delay: -.225s}
+    .st15{fill:#00C100; animation-delay: -.15s}
+    .st16{fill:#00689E; animation-delay: -.075s}
+    .st17{fill:#00466C; animation-delay: 0s}
+
+		@keyframes loader-fade {
+			0% { opacity: .1; }
+			10% { opacity: .1; }
+			50% { opacity: 1; }
+			100% { opacity: 1; }
+		}
+	</style>
+	<title>Verdensmål</title>
+	<path class="path st1" d="M202.8,0.1c19.6,0.6,38.9,4.3,57.3,10.9c-10.2,26.5-20.3,52.8-30.4,79.1l-26.9-5.3L202.8,0.1z"/>
+	<path class="path st2" d="M271.6,15.5c18.9,7.9,35.4,18.6,51,31.9l-57.1,62.4l-24.2-15.2C251.3,68.5,261.3,42.3,271.6,15.5z"/>
+	<path class="path st3" d="M367.4,103.1l-75.7,37.8l-17-22.7l57-62.4C345.9,69.7,357.9,85.6,367.4,103.1z"/>
+	<path class="path st4" d="M389,171.2l-84.2,7.9l-7.7-27.1l75.7-37.8C381.2,132.2,386.6,151.5,389,171.2z"/>
+	<path class="path st5" d="M303.5,219.1c0.9-9.3,1.7-18.2,2.5-27.6l84.1-8c1.4,19.8-0.4,39.7-5.3,59L303.5,219.1z"/>
+	<path class="path st6" d="M355.7,306.8l-67.6-51l12-24.7l81.2,23.4C375.7,273.2,366.9,290.2,355.7,306.8z"/>
+	<path class="path st7" d="M280.9,265.7l67.4,50.9c-12.4,15.8-27.2,29.5-43.8,40.8L260,285.3L280.9,265.7z"/>
+	<path class="path st8" d="M223.4,302.8l26.3-10.8l44.4,72c-17.1,10.2-35.6,17.6-55,22C233.8,358,228.6,330.4,223.4,302.8z"/>
+	<path class="path st9" d="M182.4,305.2h28.9c5.1,27.3,10.4,55,15.6,83.1c-19.9,3.3-40.2,3.5-60.2,0.6C172,360.8,177.2,333.1,182.4,305.2z
+	"/>
+	<path class="path st10" d="M154.6,386.7c-19.7-4.2-38.6-11.5-56-21.5l44.5-72.1l27.2,10.4C165,330.9,159.8,358.7,154.6,386.7z"/>
+	<path class="path st11" d="M132.5,286.7c-14.6,23.7-29.4,47.6-44.4,72c-16.8-11-31.7-24.5-44.3-40.1l67.3-51.2
+	C118.2,273.8,125.2,280.2,132.5,286.7z"/>
+	<path class="path st12" d="M90.4,231.3l13.1,26.2l-67.3,51.2c-11.8-16.5-21-34.8-27-54.1L90.4,231.3z" />
+	<path class="path st13" d="M5.9,242.7c-4.9-19.6-6.7-39.8-5.5-60l84.2,7.5c0.9,9.8,1.7,19.2,2.6,29.1L5.9,242.7z"/>
+	<path class="path st14" d="M1.7,170.4c2.5-20,8.1-39.5,16.8-57.8l75.7,37.8c-2.8,9.2-5.4,18.1-8.2,27.6L1.7,170.4z"/>
+	<path class="path st15" d="M117.4,116.6l-17.6,22.8L24,101.6c9.7-17.6,22-33.5,36.5-47.4L117.4,116.6z"/>
+	<path class="path st16" d="M150.5,94.1l-23.8,14.4L69.7,46c15-12.9,31.9-23.3,50.1-30.9L150.5,94.1z"/>
+	<path class="path st17" d="M131.4,10.7C150.1,4.1,169.8,0.5,189.7,0v84.7l-27.7,5C152,63.8,141.8,37.5,131.4,10.7z"/>
+</svg>

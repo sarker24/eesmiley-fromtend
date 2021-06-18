@@ -1,0 +1,36 @@
+@import "src/styles/vars";
+@import 'src/styles/utils/breakpoints';
+
+.recent-history {
+
+  .containerContent {
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
+    position: relative;
+  }
+
+  .active {
+    background-color: $complete;
+  }
+
+  .inactive {
+    background-color: $main;
+  }
+
+  .deleted {
+    background-color: $error;
+  }
+
+  @include bp(0px, 'tabletLarge') {
+
+    &:after {
+      content: '';
+      width: 40px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1)) 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}

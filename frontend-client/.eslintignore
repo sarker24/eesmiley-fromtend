@@ -1,0 +1,9 @@
+node_modules
+dist
+yarn.lock
+i18n
+coverage
+src/static
+src/redux/ducks/reports
+src/pages/reports
+src/components/MaterialTable

@@ -1,0 +1,74 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/utils/grid';
+
+.fullWidthActionButton {
+  width: 100%;
+  min-height: 100px !important;
+}
+
+.hideBorder {
+  border: none;
+}
+
+.gaugeContainer {
+  .placeholderInner {
+    height: calc(33vh - 48px) !important;
+  }
+
+  .highcharts-container {
+    margin-top: -5px;
+  }
+
+  padding-bottom: 16px !important;
+  min-height: 33.33333vh;
+
+  .detailedViewBtn {
+    display: block !important;
+    margin: auto;
+    transition: none !important;
+  }
+
+  .detailedViewBtn:not(.disabled) {
+    box-shadow: 0.4px 3px 4.7px 0.3px rgba(0, 0, 0, 0.24);
+  }
+
+}
+
+span.normal {
+  font-weight: normal !important;
+  text-shadow: none !important;
+}
+
+.accountsMissingContainer {
+  .empty-data > div {
+    max-width: 500px;
+    font-family: Roboto, sans-serif !important;
+  }
+
+  .empty-data {
+    height: 100% !important;
+  }
+}
+
+.detailsDialog {
+  .dialogTitle {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px !important;
+    align-items: flex-start;
+
+    p {
+      margin: 0 !important;
+    }
+
+    .closeButton {
+      margin-top: -1 * gutter() !important;
+      margin-right: -1 * gutter() !important;
+    }
+  }
+}
+
+.gaugeContainer__popover__text {
+  padding: 16px;
+}

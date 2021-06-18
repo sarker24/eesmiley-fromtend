@@ -1,0 +1,40 @@
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/utils/grid';
+@import 'src/styles/vars';
+
+.login-container {
+  @include container(12, false, row);
+  height: 100vh;
+  min-height: 500px;
+
+  .image-container {
+    display: none;
+  }
+
+  .languageSwitcher {
+    width: 100%;
+  }
+
+  @include bp('large') {
+    .image-container {
+      display: inline-block;
+      width: calc(100% / 1.5);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url('./auth_background-480.jpg');
+      @include bp('tablet') {
+        background-image: url('./auth_background-768.jpg');
+      }
+      @include bp('tabletLarge') {
+        background-image: url('./auth_background-1024.jpg');
+      }
+      @include bp('desktop') {
+        background-image: url('./auth_background-1280.jpg');
+      }
+      @include bp('gigant') {
+        background-image: url('./auth_background-1920.jpg');
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/utils/grid';
+@import 'src/styles/vars';
+
+.notification {
+  top: 0px !important;
+  width: 93.6% !important;
+  z-index: 50000;
+
+  > div {
+
+    div, span {
+      text-overflow: ellipsis;
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  > div {
+    background-color: $greenSuccess;
+  }
+
+  &.error {
+    > div {
+      background-color: $greyError;
+      border: 2px solid;
+      border-color: red;
+      color: $darkgray !important;
+    }
+
+    &.is-message > div {
+      div, span {
+        color: $darkgray !important;
+      }
+    }
+
+    .closeIcon svg {
+      fill: $darkgray;
+      color: $darkgray !important;
+    }
+  }
+
+  .icon, .icon span * {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    user-select: none;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    vertical-align: middle;
+    margin-right: 24px;
+  }
+
+  svg {
+    margin: -3px 0 3px 0;
+    fill: white;
+    color: white !important;
+
+    &.red-fill {
+      fill: $redError !important;
+      margin-right: 24px;
+    }
+  }
+
+
+  @include bp(0px, 'tablet') {
+    margin-left: 0px;
+    .icon, .icon span * {
+      display: none;
+    }
+  }
+
+  &.is-message > div {
+    div, span {
+      color: $white !important;
+    }
+  }
+}

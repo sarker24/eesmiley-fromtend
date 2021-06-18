@@ -1,0 +1,16 @@
+{
+  "postgres_migration": "DATABASE_MIGRATION_USER_URL",
+  "postgres": "DATABASE_APP_USER_URL",
+  "redis": "REDIS_URL",
+  "auth": {
+    "secret": "AUTH_SECRET"
+  },
+  "logDnaKey": "LOG_DNA_KEY",
+  "enableSequelizeLog": "ENABLE_SEQUELIZE_LOG",
+  "legacyChildDealsEndpoint": "LEGACY_CHILD_DEALS_ENDPOINT",
+  "metabase": {
+    "site": "METABASE_SITE_URL",
+    "secret": "METABASE_SECRET_KEY",
+    "maintenance": "METABASE_MAINTENANCE"
+  }
+}

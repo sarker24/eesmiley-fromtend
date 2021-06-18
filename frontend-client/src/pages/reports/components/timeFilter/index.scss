@@ -1,0 +1,38 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+
+.timeFilter {
+  margin-left: gutter() * -1;
+  margin-right: gutter() * -1;
+  justify-content: flex-start !important;
+  .DateRangePicker_picker {
+    z-index: 500 !important;
+  }
+  .timeFilterSelectors, .timeFilterInner {
+    display: flex;
+  }
+  .timeFilterIntervalSwitcher {
+    margin-bottom: 32px;
+  }
+  .timeFilterIntervalSwitcherToolbarGroup {
+    width: 100%;
+  }
+  .timeFilterMainGroup {
+    margin-left: gutter();
+    margin-right: gutter();
+  }
+
+  .timeFilterNavBtn {
+    margin-top: gutter() !important;
+  }
+
+  .dateGroupingSelector {
+    max-width: 149px;
+  }
+  .dateGroupingSelector.dimmed  {
+
+  }
+  .intervalSelector {
+    max-width: 149px;
+  }
+}

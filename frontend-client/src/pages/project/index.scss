@@ -1,0 +1,66 @@
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.projectPageContainer {
+  @include bp('tabletLarge') {
+    overflow: hidden;
+  }
+  @include bp('tablet') {
+    max-height: 87vh;
+  }
+  margin-top: gutter() * 2;
+  .projectGrid{
+    align-items: start;
+  }
+
+  .scrollArea{
+    width:100%;
+    height:87vh;
+    .scrollbar-container{
+      z-index:1;
+      @include bp(0px, 'tabletLarge') {
+        display: none;
+      }
+    }
+    @include bp('tablet', 'tabletLarge') {
+      height: auto !important;
+      overflow: visible !important;
+    }
+
+    @include bp(0px, 'tablet') {
+      height: auto !important;
+      overflow: visible !important;
+    }
+    .scrollarea-content, .scroll-area {
+      overflow: visible !important;
+    }
+  }
+  .createProject {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+  }
+
+  .projectPageGrid {
+    .gridElement {
+      min-height: 87vh;
+      border-right: 1px solid gray;
+    }
+    .gridElement:last-child{
+      border:none;
+    }
+
+    h3.pageTitle {
+      color: black;
+      margin-left: 25px;
+    }
+  }
+
+  .icon {
+    fill: rgb(133, 133, 133)!important;
+  }
+}
+.placeHolder{
+  text-align: center;
+  margin:40vh auto;
+}

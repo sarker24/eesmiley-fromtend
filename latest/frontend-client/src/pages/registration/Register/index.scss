@@ -1,0 +1,356 @@
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+
+.amount-insertion,
+.overview {
+  max-width: 600px;
+  padding-bottom: 12px;
+  // Padding-top needed so the legend's background doesn't slightly cover the elements.
+  // Margin could not be used due to the negative margin currently in use.
+  padding-top: 5px;
+
+  @include bp(0px, 'smallTablet') {
+    max-width: 300px;
+  }
+}
+
+.register-step {
+  .teal-fill {
+    fill: #009688 !important;
+  }
+
+  .red-fill {
+    fill: #F44336 !important;
+  }
+}
+
+.register-grid-container {
+  height: 100%;
+}
+
+@include bp(0px, 'tablet') {
+  .registrationPageContainer {
+    .double-pair-container-date {
+      margin-bottom: 24px !important;
+    }
+  }
+}
+
+.amount-insertion {
+  position: relative;
+
+  @include bp(0px, 'tablet') {
+    .date-picker {
+      height: 48px !important;
+      width: 100% !important;
+      margin-right: 0px !important;
+
+      div[style] {
+        width: 100% !important;
+      }
+
+      div {
+        flex: 1 100%;
+      }
+    }
+  }
+
+  .double-pair-container {
+    display: flex;
+  }
+
+  .number-input {
+    flex: 1;
+    height: 1.5cm;
+    margin-top: 25px;
+    background-color: rgba(0, 0, 0, 0.06);
+
+    @include bp('mobile') {
+      height: 2cm;
+    }
+
+    @include bp('tabletLarge') {
+      height: 2.5cm;
+    }
+
+    input {
+      font-weight: 700;
+      font-size: 1.75em !important;
+      text-align: center;
+      line-height: 1.5cm;
+      height: 1.5cm;
+      padding: 0px;
+
+      @include bp('mobile') {
+        height: 2cm;
+        line-height: 2cm;
+      }
+
+      @include bp('tabletLarge') {
+        height: 2.5cm;
+        line-height: 2.5cm;
+      }
+    }
+  }
+
+  .registrationButton, .registrationButton button, .registrationButton button * {
+    height: 1.5cm !important;
+    font-size: 22px !important;
+    line-height: 1.5cm !important;
+
+    @include bp('mobile') {
+      height: 2cm !important;
+      line-height: 2cm !important;
+    }
+
+    @include bp('tabletLarge') {
+      height: 2.5cm !important;
+      line-height: 2.5cm !important;
+    }
+  }
+
+  @media (max-height: 599px) {
+    .gauge-container {
+      display: none;
+    }
+  }
+  @media (max-width: 599px) {
+    .gauge-container {
+      display: none;
+    }
+  }
+  @media (max-height: 631px) {
+    .number-input {
+      height: 1.5cm;
+    }
+    .number-input input {
+      line-height: 1.5cm;
+      height: 1.5cm;
+      padding: 0px;
+    }
+    .registrationButton, .registrationButton button, .registrationButton button * {
+      height: 1.5cm !important;
+      font-size: 22px !important;
+      line-height: 1.5cm !important;
+    }
+  }
+}
+
+.overview {
+  .step-container {
+    padding-right: 40px !important;
+
+    @include bp('smallTablet') {
+      padding: 18px 40px 18px 18px !important;
+    }
+
+    @include bp('tablet') {
+      padding: 18px 40px 18px 18px !important;
+    }
+
+    &:hover {
+      polygon#arrow-right {
+        animation: fly-out 300ms ease-in-out;
+      }
+
+      polygon#arrow-left {
+        animation: fly-out reverse 300ms ease-in-out;
+      }
+    }
+
+    > div {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .step-info {
+    //Only for mobile breakpoint
+    &:not(:nth-last-child(1)) {
+      @include bp(0px, 'smallTablet') {
+        .step-container {
+          padding: 5px 0 !important;
+        }
+
+        .step-image {
+          min-width: 40px;
+          min-height: 40px;
+          margin-left: 15px;
+          margin-right: 5px;
+
+          .arrow-down {
+            display: block;
+            bottom: -29px;
+            width: 11px;
+          }
+        }
+      }
+    }
+
+    &:not(:nth-last-child(2)) {
+      .step-image {
+        @include bp('tablet') {
+          min-width: 60px;
+          min-height: 60px;
+          margin: 0px 10px;
+        }
+
+        @include bp('tabletLarge') {
+          min-width: 80px;
+          min-height: 80px;
+          margin: 0px 20px;
+        }
+
+        .arrow-down {
+          @include bp('smallTablet') {
+            display: block;
+            bottom: -38px;
+            width: 18px;
+            height: 25px;
+          }
+        }
+      }
+    }
+
+    &:nth-last-child(1) {
+      .step-container {
+        padding: 10px !important;
+
+        @include bp(0px, 'smallTablet') {
+          margin-top: 6px !important;
+        }
+      }
+    }
+
+    &:nth-last-child(2) {
+      .step-container {
+        @include bp('smallTablet') {
+          margin-top: 18px !important;
+        }
+      }
+    }
+  }
+
+  .date-picker {
+    flex-basis: auto; //IE11 fix
+    display: inline-block;
+    vertical-align: middle;
+    align-items: flex-start;
+    border-bottom-color: rgba(0, 0, 0, 0.42);
+    transition: border 300ms ease-in-out;
+    flex: 1 100%;
+    margin-top: 24px;
+    width: 100%;
+
+    @include bp('tabletLarge') {
+      margin-top: 50px;
+    }
+
+    &:hover {
+      border-bottom-color: rgb(0, 150, 136);
+    }
+
+    input {
+      font-size: 1.4em !important;
+      color: rgba(0, 0, 0, 0.54) !important;
+
+      @include bp('desktop') {
+        font-size: 1.75em !important;
+      }
+    }
+
+    svg {
+      margin-top: 4px;
+      height: 40px !important;
+      width: 40px !important;
+    }
+
+    div[style] {
+      width: 100% !important;
+      height: 48px !important;
+    }
+  }
+
+  .step-image {
+    width: 100%;
+    background-size: cover !important;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 2px;
+    padding: 0;
+    position: relative;
+    // to keep aspect ratio
+    max-height: 1px;
+    max-width: 1px;
+
+    @include bp('tablet') {
+      min-width: 80px;
+      min-height: 80px;
+    }
+
+    @include bp('tabletLarge') {
+      min-width: 120px;
+      min-height: 120px;
+    }
+  }
+
+  .arrow-down {
+    display: none;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    fill: rgb(0, 150, 136);
+  }
+
+  .step-title {
+    text-align: left;
+    word-break: break-all;
+    font-size: 10px;
+    margin-left: 1px;
+
+    @include bp('tabletLarge') {
+      font-weight: 400;
+      font-size: 12px;
+      margin-left: 2px;
+    }
+  }
+
+  .step-description {
+    word-break: break-word;
+    text-align: left;
+    font-size: 20px;
+    line-height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include bp('tabletLarge') {
+      font-size: 28px;
+      line-height: 34px;
+    }
+
+    @include bp('desktop') {
+      font-size: 34px;
+      line-height: 40px;
+    }
+  }
+}
+
+@keyframes fly-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  51% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

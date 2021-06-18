@@ -1,0 +1,94 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+@mixin headerPanelText {
+  color: $white;
+  font-weight: 200;
+}
+
+.profilePanel {
+  background-color: $eSmileyBlue;
+  height: $topNavbarHeight;
+  display: flex;
+  flexFlow: row wrap;
+  align-items: center;
+
+  &Toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 auto;
+
+    .icon {
+      width: 32px;
+      transition: transform 0.25s ease-out;
+    }
+
+    svg {
+      color: rgba($white, 0.55) !important;
+    }
+
+    h4 {
+      @include headerPanelText;
+
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  &Head {
+    display: flex;
+    vertical-align: middle;
+    align-items: center;
+
+    flex-direction: row;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &__name, &__avatar {
+      cursor: pointer;
+    }
+
+    svg {
+      cursor: pointer;
+    }
+
+    &__name h3 {
+      @include headerPanelText;
+    }
+
+    &__name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__long_name {
+      font-size: 0.7em;
+    }
+  }
+
+  .is-toggled &Head {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &Body {
+    max-height: 0;
+    transition: max-height, 0.25s, ease-in;
+
+    &.is-visible {
+      max-height: 9999px;
+      transition: max-height, 0.25s, ease-in;
+    }
+  }
+
+  .profilePanelHead__avatar {
+    width: 28px;
+    height: 28px;
+  }
+}

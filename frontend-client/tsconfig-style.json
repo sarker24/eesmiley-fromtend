@@ -1,0 +1,53 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "src/components/*",
+        "src/pages/*",
+        "schemas/*",
+        "schemas/**/*",
+        "./**/*"
+      ]
+    },
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "noImplicitThis": true,
+    "traceResolution": true,
+    "allowSyntheticImports": true,
+    "module": "commonjs",
+    "target": "es5",
+    "useBabel": true,
+    "jsx": "react",
+    "types": [
+      "webpack",
+      "react",
+      "react-dom",
+      "react-router",
+      "react-helmet",
+      "react-redux",
+      "react-intl",
+      "redux",
+      "lodash",
+      "material-ui"
+    ]
+  },
+  "include": [
+    "./src/**/*",
+    "./src/components/**/*",
+    "schemas/**/*",
+    "schemas/*",
+    "./**/*"
+  ],
+  "exclude": [
+    "tests",
+    "./src/**/*.test.tsx",
+    "./src/**/*.test.ts",
+    ".src/i18n",
+    ".src/static",
+    ".src/styles"
+  ]
+}

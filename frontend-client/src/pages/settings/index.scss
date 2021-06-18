@@ -1,0 +1,119 @@
+@import 'src/styles/utils/grid';
+@import 'src/styles/vars';
+@import 'src/styles/utils/breakpoints';
+
+.settingsPageContainer {
+  display: flex;
+  padding-top: gutter() * 2;
+  flex-direction: column;
+  overflow: visible;
+  padding-left: gutter();
+  padding-right: gutter();
+  min-height: calc(100vh - 80px);
+
+  @include bp('desktop') {
+    flex-direction: row;
+  }
+
+  @include bp(0px, 'desktop') {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .settingsContent {
+    > .placeholder {
+      min-height: calc(100vh - 116px);
+    }
+
+    @include bp('desktop') {
+      flex: 1 75%;
+      flex-basis: span(11);
+      max-width: span(11);
+      min-width: 300px;
+      overflow: visible;
+    }
+  }
+
+  .settingsFilters {
+    @include bp(0px, 'desktop') {
+      margin: -2% -2% 70px -2%;
+    }
+  }
+
+  .setting {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    &--borderless {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    &:first-child {
+      margin-top: -10px;
+    }
+  }
+
+  // Sets Material Table to a fixed layout.
+  // This was not possible with any option on the table, so it's added here instead
+  .MuiTable-root {
+    @include bp('tablet') {
+      table-layout: fixed;
+    }
+
+    td {
+      &:last-child {
+        padding-right: 30px !important;
+      }
+    }
+  }
+
+  .MuiTableRow-root {
+    &#new-or-updated-row {
+      background-color: rgba(0, 150, 136, .3) !important;
+    }
+  }
+
+  .MuiTableRow-root.MuiTableRow-hover:hover {
+    background-color: rgba(0, 0, 0, .02);
+  }
+
+  .MuiPaper-root {
+    // Ugly fix to overwrite Material Table's inline overflow properties
+    // which cause scrolling inside the table body when adding a new row
+    & > div:not(.MuiToolbar-root):not(.MuiTable-root) {
+      position: relative;
+      overflow: visible !important;
+      margin-right: -16px;
+
+      @include bp('tablet') {
+        position: static;
+        margin: 0;
+      }
+
+      &:after {
+        content: '';
+        width: 40px;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1)) 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+
+        @include bp('tablet') {
+          content: none;
+        }
+      }
+
+      & > div > div {
+        @include bp('tablet') {
+          overflow: visible !important;
+        }
+      }
+    }
+  }
+}

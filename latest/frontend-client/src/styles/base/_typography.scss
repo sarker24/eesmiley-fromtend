@@ -1,0 +1,12 @@
+@import '../vars';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap');
+
+h1,h2,h3,h4,h5,h6, p, span, strong, em{
+  // CRAS: I had to exclude the reports page here, because the CSS overwrites the font for span elements.
+  // This CSS wouldn't be needed if the original theme would have been set up correctly and the Typography component used.
+  :not(.is-reports-page & ) {
+    font-family: $mainFamily;
+    letter-spacing: 0.024em;
+  }
+}

@@ -1,0 +1,7 @@
+.barGauge {
+  &-buttons {
+    > * + * {
+      margin-left: 16px;
+    }
+  }
+}

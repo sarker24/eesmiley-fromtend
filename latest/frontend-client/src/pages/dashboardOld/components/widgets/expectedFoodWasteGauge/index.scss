@@ -1,0 +1,74 @@
+@import 'src/styles/utils/breakpoints';
+
+.menu-active {
+  .expectedFoodWasteGaugeContainer {
+    @include bp(0px, 1500px) {
+      .expectWeeklyWasteInnerContainer {
+        display: block;
+
+        > * {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.expectedFoodWasteGaugeContainer {
+
+  .barChart {
+    margin-top: 24px;
+  }
+
+  .expectWeeklyWasteInnerContainer {
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+
+    > * {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .expectWeeklyWasteInnerContainer {
+      display: block;
+
+      > * {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.expectedFoodWasteGaugeContainer.editingMode {
+  .containerHeader {
+    h4 {
+      font-weight: normal !important;
+      text-transform: none !important;
+    }
+  }
+
+  .containerContent {
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+
+    .containerContentInner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .expectedFoodWasteSettingsFormInner {
+      display: flex;
+      justify-content: center;
+    }
+
+    input {
+      text-align: center !important;
+      font-weight: 700;
+      font-size: 1.75em !important;
+    }
+  }
+}

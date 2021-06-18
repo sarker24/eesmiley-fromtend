@@ -1,0 +1,19 @@
+.DS_Store
+node_modules/
+dist/
+old-**
+.env
+sassdoc
+docs
+/styleguide
+.awcache/
+lintErrors/
+coverage/
+errorShots/
+test-report.xml
+/.awcache/
+.idea/
+
+# dont add ts artifacts
+src/**/*.js
+src/**/*.jsx

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataPlaceholder component should render with defaults 1`] = `
+<div
+  className="placeholder DataPlaceholder-container-1"
+>
+  <WithStyles(ForwardRef(Typography))
+    className="DataPlaceholder-title-2"
+    variant="h1"
+  >
+    foo
+  </WithStyles(ForwardRef(Typography))>
+  <div
+    className="DataPlaceholder-description-3"
+  >
+    bar
+  </div>
+</div>
+`;
+
+exports[`DataPlaceholder component should render with the button 1`] = `
+<div
+  className="placeholder DataPlaceholder-container-1 it-class"
+>
+  <WithStyles(ForwardRef(Fab))
+    color="primary"
+    onClick={[Function]}
+  >
+    <div>
+      icon
+    </div>
+  </WithStyles(ForwardRef(Fab))>
+  <WithStyles(ForwardRef(Typography))
+    className="DataPlaceholder-title-2"
+    variant="h1"
+  >
+    foo
+  </WithStyles(ForwardRef(Typography))>
+  <div
+    className="DataPlaceholder-description-3"
+  >
+    bar
+  </div>
+</div>
+`;

@@ -1,0 +1,90 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.widget {
+  .containerContent {
+    height: 100%;
+
+    > div.containerContentInner {
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (min-height: 1024px) and (min-width: 1366px) {
+      min-height: 342px;
+    }
+  }
+
+  .dialogFooter {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+  }
+
+  .widgetSettingsNotification {
+    display: inline-block;
+    line-height: 26px;
+    font-size: 14px;
+    position: absolute;
+    right: (gutter() * 2) + 190px;
+    z-index: 500;
+    margin-top: 3px;
+
+    svg {
+      float: left;
+      margin-right: 12px;
+    }
+  }
+
+  .widgetSettingsNotification.success {
+    color: $green;
+
+    svg {
+      fill: $green !important;
+    }
+
+    @include bp('mobile') {
+      right: auto !important;
+      left: 15px;
+    }
+    @include bp('tablet') {
+      right: (gutter() * 2) + 190px !important;
+      left: auto !important;
+    }
+  }
+
+  .widgetSettingsNotification.encounteredError {
+    color: $redError;
+
+    svg {
+      fill: $redError !important;
+    }
+  }
+
+  .fadeOut-enter {
+    opacity: 0;
+  }
+
+  .fadeOut-enter.fadeOut-enter-active {
+    opacity: 1;
+    transition: opacity .3s ease-in;
+  }
+
+  .fadeOut-leave.fadeOut-leave-active {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+
+}
+
+.widget.editingMode:before {
+  display: block;
+  content: ' ';
+  background: #fff;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  margin: -36px;
+  position: absolute;
+  z-index: -100;
+}

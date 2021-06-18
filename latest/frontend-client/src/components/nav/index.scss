@@ -1,0 +1,29 @@
+@import 'src/styles/mixins/bar';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.topNavBar {
+
+  .nav {
+    background-color: $eSmileyBlue !important;
+    height: $topNavbarHeight !important;
+
+    /*  overriding mobile height to avoid breaking any layouts */
+    .MuiToolbar-root {
+      height: 100% !important;
+    }
+
+    &__item,
+    &SectionStart,
+    &SectionEnd {
+      margin: 0;
+      display: flex;
+    }
+  }
+
+}
+
+.topNavBar > .nav > button {
+  margin-right: 25px !important;
+  width: 58px !important;
+}

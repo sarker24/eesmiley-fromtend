@@ -1,0 +1,74 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.projectModalContent {
+
+  &Body {
+    display: block;
+    flex-direction: row;
+    @include bp('tablet') {
+      display: flex;
+    }
+
+    .editTools {
+      width: 100%;
+    }
+  }
+
+  .timelineDate, .timelineStepTitle {
+    font-size: 16px !important;
+  }
+
+  dd, dl, dt {
+    color: $black;
+  }
+
+  .timelineContentInner {
+    font-size: 14px !important;
+  }
+
+  .placeholder {
+    max-width: 410px;
+    width: 100%;
+    background: transparent;
+  }
+
+  @include bp('tablet') {
+    .timeline {
+      padding-left: 24px;
+      width: span(7);
+    }
+    .modalFooter {
+      margin-top: 0px;
+    }
+  }
+
+  .projectStatusPanelHeader {
+    margin: 0;
+  }
+
+}
+
+.projectModal .modalBody {
+  margin-top: -24px;
+  padding-bottom: 24px !important;
+
+  .timeline {
+    padding-bottom: 0px;
+  }
+}
+
+@media screen and (max-height: 768px) and (min-width: 768px) {
+  .projectModalContent .timeline > div {
+    max-height: 440px;
+    overflow: auto;
+  }
+}
+
+@media screen and (min-height: 768px) and (min-width: 768px) {
+  .projectModalContent .timeline > div {
+    max-height: 500px;
+    overflow: auto;
+  }
+}

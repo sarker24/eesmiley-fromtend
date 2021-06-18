@@ -1,0 +1,46 @@
+{
+  "preset": "ts-jest",
+  "roots": ["<rootDir>/src"],
+  "snapshotSerializers": ["enzyme-to-json/serializer"],
+  "setupFilesAfterEnv": ["<rootDir>/src/test-utils/setupTests.ts"],
+  "setupFiles": ["jest-localstorage-mock"],
+  "unmockedModulePathPatterns": [
+    "node_modules/react/",
+    "node_modules/enzyme/",
+    "core/datatransfer",
+    "enzyme",
+    "react"
+  ],
+  "globals": {
+    "ts-jest": {
+      "tsconfig": "tsconfig.test.json"
+    },
+    "sysvars": {
+      "API_URL": "http://api.esmiley.local:7001/",
+      "LEGACY_API_URL": "https://develop.safe.esmiley.dev/"
+    }
+  },
+  "collectCoverage": true,
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  },
+  "testResultsProcessor": "<rootDir>/node_modules/jest-junit-reporter",
+  "testRegex": "((\\.|/)(test))\\.[jt]sx?$",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "moduleDirectories": [
+    "node_modules",
+    "src/test-utils",
+    "src",
+    "src/components",
+    "src/*",
+    "src/pages"
+  ],
+  "moduleNameMapper": {
+    "\\.(scss|css)$": "<rootDir>/__mocks__/styleMock.ts",
+    "\\.(gif|jpg|png|svg)$": "<rootDir>/__mocks__/fileMock.ts"
+  }
+}

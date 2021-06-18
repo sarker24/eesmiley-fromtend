@@ -1,0 +1,18 @@
+@import '../../../../../../styles/vars';
+
+.changeIndicator {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  flex: 1 1 auto;
+
+  .changeIndicatorIcon {
+    padding: 6px;
+
+    svg {
+      fill: $primary !important;
+      width: 30px !important;
+      height: 30px !important;
+    }
+  }
+}

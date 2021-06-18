@@ -1,0 +1,38 @@
+@import '../../../../styles/vars';
+.DateRangePicker {
+    z-index: 3;
+    button {
+        outline: 0;
+    }
+    .CalendarDay--selected-start, .CalendarDay--selected-end, .CalendarDay--selected {
+      background-color: $secondary;
+    }
+    .CalendarDay {
+        border: 0;
+        border-radius: 50%;
+    }
+    .CalendarDay--outside {
+        color: rgba(0, 0, 0, 0.2);
+    }
+    .DayPickerNavigation>button {
+        background-color: Transparent;
+        border: 0;
+    }
+
+    .DateInput__display-text--focused {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+    .DateInput,
+    .DateInput__display-text {
+        padding: 0 8px;
+    }
+    .DateRangePickerInput {
+        border: 0;
+        border-bottom: 2px solid $secondary;
+        padding-bottom: 4px;
+    }
+    .DateRangePickerInput_calendarIcon {
+        padding: 0;
+        margin: 0;
+    }
+}

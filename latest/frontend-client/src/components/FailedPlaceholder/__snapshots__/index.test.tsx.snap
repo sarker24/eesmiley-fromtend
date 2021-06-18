@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FailedPlaceholder component should render with defaults 1`] = `
+<div
+  className="placeholder FailedPlaceholder-container-1"
+>
+  <SVGInline
+    classSuffix="-svg"
+    cleanup={Array []}
+    cleanupExceptions={Array []}
+    component="span"
+    height="125px"
+    svg="test-file-stub"
+    width="100px"
+  />
+  <WithStyles(ForwardRef(Typography))
+    gutterBottom={true}
+    variant="body1"
+  >
+    Whoops!
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography))
+    align="center"
+    gutterBottom={true}
+    variant="subtitle1"
+  >
+    Something went wrong while communicating with us.
+  </WithStyles(ForwardRef(Typography))>
+</div>
+`;
+
+exports[`FailedPlaceholder component should render with the button 1`] = `
+<div
+  className="placeholder FailedPlaceholder-container-1 it-class"
+>
+  <SVGInline
+    classSuffix="-svg"
+    cleanup={Array []}
+    cleanupExceptions={Array []}
+    component="span"
+    height="125px"
+    svg="test-file-stub"
+    width="100px"
+  />
+  <WithStyles(ForwardRef(Typography))
+    gutterBottom={true}
+    variant="body1"
+  >
+    foo
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography))
+    align="center"
+    gutterBottom={true}
+    variant="subtitle1"
+  >
+    bar
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Button))
+    onClick={[Function]}
+    startIcon={<Memo />}
+  >
+    Retry
+  </WithStyles(ForwardRef(Button))>
+</div>
+`;

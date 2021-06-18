@@ -1,0 +1,104 @@
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/utils/grid';
+@import 'src/styles/vars';
+
+.errorPage {
+  background-color: $eSmileyBlue;
+  color: $white;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+
+  &Code {
+    font-size: 12em;
+    font-weight: 100;
+    position: relative;
+    transform-origin: 50%;
+    @include bp('desktop') {
+      transform: translate(20vw, 15vh);
+      max-width: 30%;
+    }
+    margin: 0.05em;
+  }
+
+  &Body {
+    padding: 1.5em;
+    transform-origin: 50%;
+    transform: translate(0, 6vh);
+    position: relative;
+    z-index: 2000;
+    background-color: $eSmileyBlue;
+
+
+    @include bp('desktop') {
+      transform-origin: 50% 50%;
+      transform: translate(50vw, 25vh);
+      max-width: 30%;
+    }
+
+    &__Buttons {
+      display: flex;
+      align-items: center;
+      @include bp('desktop') {
+        justify-content: flex-end;
+      }
+      margin-right: 5%;
+
+      .btn {
+        margin: 0;
+      }
+
+      .btn:last-of-type {
+        margin-left: 1em;
+      }
+    }
+  }
+
+  /* PLATE */
+  &:before {
+    @include bp('mobile') {
+      content: '';
+      background-image: url('./error_img.gif');
+      background-position: 0px;
+      width: 100%;
+      height: 50%;
+
+      max-width: 475px;
+      max-height: 368px;
+
+
+      display: block;
+      position: absolute;
+
+      bottom: 0;
+      z-index: 1000;
+    }
+  }
+
+  /* PIZZA SLICE */
+
+  &:after {
+    content: '';
+    background-image: url('./error_img.gif');
+    background-position: 417px 0px;
+    width: 100%;
+    height: 41%;
+    right: 0;
+
+    max-width: 416px;
+    max-height: 301px;
+
+    display: block;
+    position: absolute;
+    top: gutter();
+
+    z-index: 1000;
+
+    @include bp('desktop') {
+      width: 35%;
+      right: 35%;
+      top: 10%;
+    }
+
+  }
+}

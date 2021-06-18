@@ -1,0 +1,22 @@
+@import 'src/styles/vars';
+@import 'sass-mq/mq';
+
+$mq-breakpoints: (
+  'small': $mobile,
+  'mobile': $mobile,
+  'medium': $tablet,
+  'smallTablet': $smallTablet,
+  'tablet': $tablet,
+  'large': $tabletLarge,
+  'tabletLarge': $tabletLarge,
+  'huge': $desktop,
+  'desktop': $desktop,
+  'gigant': $desktopHD,
+  'bigscreen': $desktopHD,
+);
+
+@mixin bp($breakpoint, $maxWidth: false, $other: false) {
+  @include mq($from: $breakpoint, $until: $maxWidth, $and: $other) {
+    @content
+  }
+}

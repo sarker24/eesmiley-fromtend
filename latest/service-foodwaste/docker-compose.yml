@@ -1,0 +1,86 @@
+version: '2'
+services:
+  traefik:
+    image: 'traefik:1.7.18'
+    command: '--api --docker --docker.domain=esmiley.local --docker.exposedbydefault=false --logLevel=DEBUG'
+    ports:
+      - '7001:80'
+      - '7002:8080'
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/dev/null:/traefik.toml'
+    container_name: traefik
+    networks:
+      - default
+
+  redisdata:
+    image: busybox
+    volumes:
+      - /var/lib/redis
+    container_name: service-redis-data
+
+  redis:
+    image: 'redis:3.2.9'
+    ports:
+      - '8002:6379'
+    volumes_from:
+      - redisdata
+    container_name: service-redis
+    networks:
+      - default
+
+  postgresdata:
+    image: busybox
+    volumes:
+      - /var/lib/postgresql
+    container_name: service-postgres-data
+
+  postgres:
+    image: 'postgres:9.6'
+    ports:
+      - '8001:5432'
+    expose:
+      - '5432'
+    volumes_from:
+      - postgresdata
+    container_name: service-postgres
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    networks:
+      - default
+
+  service-foodwaste:
+    build: .
+    ports:  # comment out the `ports` array in order to scale multiple instances
+      - '8020:3030'
+      - '18020:5858'
+    expose:
+      - 3030
+      - 5858
+    tty: true
+    volumes:
+      - './app:/app'
+    command: 'npm run gulp-start'
+    environment:
+      - NODE_ENV=default
+      - ENVIRONMENT=development
+      - DEBUG_ENABLE=true
+      - MIGRATION_HOST=${MIGRATION_HOST}
+      - HOSTNAME=localhost
+      - BUILD_TAG=v0.1-fake
+      - BUILD_HASH=174569116292adcbd1870d6b2d213fbf978f3d8f
+      - BUILD_BRANCH=bogus-branch
+      - MIGRATIONS_ACTION=${MIGRATIONS_ACTION}
+      - ALARMS_ENABLED=true
+    networks:
+      - default
+    container_name: service-foodwaste # comment out the `container_name` prop in order to scale multiple instances
+    labels:
+      - traefik.enable=true
+      - traefik.backend=foodwaste
+      - 'traefik.frontend.rule=Host:localhost,api.esmiley.local;PathPrefixStrip:/foodwaste/;'
+
+networks:
+  default:
+    external:
+      name: ms-network

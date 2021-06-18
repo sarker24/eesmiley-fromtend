@@ -1,0 +1,6 @@
+{
+  "API_URL": "http://api.dev.esmiley.com/",
+  "LEGACY_API_URL": "https://develop.safe.esmiley.dev/",
+  "HELP_URL": "http://support.esmiley.co/",
+  "STATS_URL": "https://stats.dev.esmiley.com"
+}

@@ -1,0 +1,32 @@
+@import 'src/styles/vars';
+
+.helpWrapper {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  .helpIcon {
+    color: rgba(34, 34, 34, 0.85);
+    fill: rgba(34, 34, 34, 0.85);
+  }
+}
+
+.container .containerTitle {
+  .helpWrapper {
+    margin-top: -24px;
+  }
+}
+
+.helpContainer {
+  white-space: pre-line;
+
+  &Wrapper & {
+    padding: 1em;
+    max-width: 320px;
+
+    p {
+      margin: 0;
+      margin-bottom: 1.25em;
+    }
+  }
+}

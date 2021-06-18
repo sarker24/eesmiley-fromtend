@@ -1,0 +1,38 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/utils/grid';
+
+.detailsDialog {
+  padding-top: 0% !important;
+
+  .bars {
+    margin-bottom: spacing();
+
+    .highcharts-root, .highcharts-container {
+      overflow: visible !important;
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .detailsDialog > div > div > div > div:not(.dialogTitle) {
+    overflow: auto !important;
+  }
+}
+
+.detailsTableContainer {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+
+  .containerHeader {
+    font-size: 12px;
+    @include bp('tablet') {
+      font-size: inherit;
+    }
+  }
+
+}
+
+.detailsTableWrapper {
+  overflow: auto;
+}

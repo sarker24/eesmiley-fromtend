@@ -1,0 +1,109 @@
+@import 'src/styles/main';
+@import 'src/styles/vars';
+@import 'src/styles/utils/breakpoints';
+@import 'src/styles/utils/grid';
+
+.mainAppWrapper {
+	position:relative;
+	overflow:hidden;
+  min-height: 100vh;
+
+  &.is-reports-page {
+    background-color: #f9f9f9;
+  }
+
+  &.locked .mainAppViewContent > *:not(.notification){
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+	.mainAppView {
+    display: block;
+	}
+
+  .mainAppViewContentWrapper .mainAppViewContent {
+    transition: transform 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    transition-property: transform, width;
+  }
+  .topNavBar .nav {
+    transition: padding-left 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+}
+
+.mainAppWrapper.menu-active {
+  .topNavBar > .nav > button {
+    display: none!important;
+  }
+  .mainAppViewContentWrapper .mainAppViewContent {
+    @include bp('tablet') {
+      width: calc(100% - #{$menuWidth});
+      margin-left: $menuWidth;
+    }
+  }
+}
+
+.mainAppViewContent {
+	&.is-logged-in {
+	  padding-left: gutters();
+	  padding-right: gutters();
+	}
+	&.nav-visible {
+	  padding-top: $topNavbarHeight;
+	  @include bp('tablet') {
+	    margin-left: $menuCollapsedWidth;
+	  }
+	}
+  &.transition-down {
+    transition: transform 0.5s;
+    transform: translate(0px, 80px);
+  }
+}
+
+@include bp(0px, 'tablet') {
+  .mainAppViewContent {
+    &.is-logged-in {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+.content-spacing {
+  margin-left: spacing()!important;
+}
+
+.spacing {
+  margin-left: gutter();
+  margin-right: gutter();
+}
+
+.topRight{
+  .languageSwitcher{
+    display: inline-block;
+    .langItemContent{
+      .langItemContentText{
+        color: white !important;
+      }
+    }
+    button svg{
+      fill:white !important;
+    }
+  }
+  .moduleSelector{
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+  }
+  @media screen and (max-width: 500px){
+    .languageSwitcher{
+      display: none;
+    }
+  }
+}
+.menuBar{
+  @media screen and (min-width: 500px){
+    .languageSwitcherMenuItem{
+      display:none;
+    }
+  }
+}

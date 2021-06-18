@@ -1,0 +1,74 @@
+.projectActionsPanel {
+  .date-picker {
+    min-width: 256px;
+
+    input {
+      text-align: left;
+      margin-left: 35px;
+    }
+  }
+
+  .projectName, .projectSelections, .projectDuration, .durationValues, .projectActions, .editModalControllers {
+    padding: 10px 0;
+  }
+
+  .editModalControllers {
+    margin-bottom: 100px;
+  }
+
+  .durationValues > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 48px;
+  }
+
+  .durationValues .date-picker {
+    border-top: none rgb(224, 224, 224);
+    border-left: none rgb(224, 224, 224);
+    border-right: none rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+    position: relative;
+  }
+
+  .durationValues .inputWrapper {
+    margin-bottom: 20px;
+
+    .input {
+      height: 38px !important;
+    }
+  }
+
+  .durationValues small {
+    color: rgba(0, 0, 0, 0.298039);
+  }
+
+  .editModalControllers {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .actions {
+    display: inline-block;
+    min-width: 304px;
+
+    .action {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  .projectSelections {
+    border: none;
+  }
+}
+
+.actionsLabel {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.projectActionsPanel:not(.projectActionsPanelInModal) {
+  padding: 10px;
+}

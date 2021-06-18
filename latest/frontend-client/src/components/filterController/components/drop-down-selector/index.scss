@@ -1,0 +1,37 @@
+@import '../../../../styles/vars';
+@import '../../../../styles/utils/grid';
+
+.customerSelectorForm div > label, .customer-select-and-clear div > label {
+  font-size: 16px;
+}
+
+.customerSelectorForm:not(.disabled) div > label, .customer-select-and-clear div:not(.disabled) > label {
+  color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.customerSelectorForm {
+  min-width: 169px !important;
+
+  .customerSelector:before {
+    background-color: $primary;
+    height: 2px !important;
+  }
+
+  .customerSelector svg {
+    margin-right: 9px !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .customerSelectorForm {
+    width: 100% !important;
+  }
+}
+
+.customer-select-and-clear {
+  margin-bottom: 5px;
+}
+
+.customerSelectorForm .customerSelector:after {
+  background-color: rgb(0, 150, 136) !important;
+}

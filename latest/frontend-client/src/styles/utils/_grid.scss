@@ -1,0 +1,44 @@
+// Grid Mixin Library
+
+@import 'src/styles/vars';
+@import '~susy/sass/susy';
+@import 'src/styles/utils/breakpoints';
+
+$susy: (
+  columns: 12,  // The number of columns in your grid
+  gutter-position: inside-static,
+  gutters: 24px/80px,
+  column-width: 80px,
+);
+
+@mixin container($context: 12, $gutters: true, $direction: false) {
+  //@include container($context);
+  display: flex;
+  justify-content: space-between;
+  width: span($context);
+
+
+  @if $direction {
+    flex-direction: $direction;
+  }
+}
+
+@mixin row() {
+  @include gutters();
+  @include break;
+}
+
+@mixin span($columns, $gutters:true) {
+  width: span($columns);
+  max-width: span($columns);
+
+  @if $gutters {
+    @include gutters();
+  }
+}
+
+@function spacing() {
+  @return 24px;
+}
+
+

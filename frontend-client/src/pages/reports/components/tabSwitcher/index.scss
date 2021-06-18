@@ -1,0 +1,73 @@
+@import '../../../../styles/vars';
+
+.tabSwitcher {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  position: relative;
+  background: $greyLight;
+  border-radius: 30px;
+  margin: 0;
+  margin-top: 10px;
+  justify-content: space-between;
+  overflow: hidden;
+  .indicator {
+    display: block;
+    position: absolute;
+    width: 33.333%;
+    background: $primary !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: width 0.5s linear, -webkit-transform 0.5s cubic-bezier(0.17, 0.8, 0.33, 0.99);
+    transition: transform 0.5s cubic-bezier(0.17, 0.8, 0.33, 0.99), width 0.5s linear;
+    transition: transform 0.5s cubic-bezier(0.17, 0.8, 0.33, 0.99), width 0.5s linear, -webkit-transform 0.5s cubic-bezier(0.17, 0.8, 0.33, 0.99);
+    z-index: 0;
+    border-radius: 30px;
+  }
+
+  &:not(.hasValue) {
+    .indicator {
+      background-color: #f9f9f9 !important;
+    }
+  }
+
+  .tab {
+    box-shadow: none;
+    background-color: transparent;
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1;
+    color: #2b2c33;
+    font-weight: 700;
+    border-radius: 30px !important;
+    font-size: 18px;
+    height: 60px !important;
+    min-width: 0px !important;
+    flex: 1;
+  }
+  .tab.placeholderTab {
+    transition: flex 0.3s 0.03s, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms !important;
+    flex: 1.2;
+    &.active * {
+      color: $primary !important;
+    }
+  }
+  .tab.hidden {
+    flex: 0 !important;
+    min-width: 0px !important;
+    transform: translateX(-100%);
+  }
+  .tab.active {
+    color: #fff;
+    box-shadow: none;
+    background-color: transparent;
+    * {
+      color: #fff !important;
+      transition: color 0.1s linear !important;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "serviceNameHumanReadable": "Foodwaste",
+  "host": "localhost",
+  "port": 3030,
+  "portExposed": 8020,
+  "serviceName": "service-foodwaste",
+  "postgres_migration": "postgres://foodwaste_migration:asdf1234@service-postgres:5432/foodwaste",
+  "migration_table": "_migrations",
+  "migrationsDirPath": "migrations/migrations",
+  "postgres": "postgres://foodwaste_app:asdf1234@service-postgres:5432/foodwaste",
+  "redis": "redis://redis@service-redis:6379/0",
+  "auth": {
+    "secret": "xJ0A6fwUy1JpCbPi+W44pP0hsibkaCOBzhgsst/tp37vP9gdZjPaFgz5TqQo+LT9vP2r9D4VEx5ZaGnViqV0TQ=="
+  },
+  "endpoints": {
+    "local": "http://api.esmiley.local/foodwaste/status",
+    "dev": "http://api.dev.esmiley.com/foodwaste/status",
+    "staging": "https://api.staging.esmiley.com/foodwaste/status",
+    "prod": "https://api.esmiley.com/foodwaste/status"
+  },
+  "languageDefault": "da-DK",
+  "currencyDefault": "DKK",
+  "defaultUnit": "kg",
+  "defaultAmountForProductsInGrams": 1000,
+  "defaultNormalizationFactorForCost": 100,
+  "phraseApp": {
+    "accessToken": "82728c7e0340c7df3db44d3deac6a6e80c59fd8d79136d20ca3fe9b684eab66e",
+    "projectId": "52c32890bdf9ea28ef909eec89d5bfb3"
+  },
+  "ingredientUploadAllowedMimeTypes": [
+    "text/csv",
+    "application/vnd.ms-excel",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  ],
+  "redisKeyPrefix": {
+    "ingredientsFileUpload": "ingredients_file_upload"
+  },
+  "ignoreLoggingPaths": [
+    "/health-check"
+  ],
+  "enableSequelizeLog": "true",
+  "legacyChildDealsEndpoint": "https://develop.safe.esmiley.dev/system-api/child-deals",
+  "minPercentOfRegs": 70,
+  "metabase": {
+    "site": "http://stats.dev.esmiley.com",
+    "secret": "dc47da8bb950d4b63add139b579b2ae8d4b8a758177a5d47b35188ecf2328aaf"
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "LsWrKkGIk1EG3khM2PgnMbGimJY=",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+@import 'src/styles/vars';
+@import 'src/styles/utils/grid';
+@import 'src/styles/utils/breakpoints';
+
+.dashboard {
+  .tip-placeholder {
+    margin-bottom: 24px;
+    height: 338px;
+  }
+}
+
+.tip {
+  @include container(12);
+  padding-left: 0;
+  padding-right: 0;
+  flex-direction: column;
+  display: block;
+  margin-top: 0;
+
+  &Title {
+    margin-top: 0;
+    margin-bottom: 0.4em;
+  }
+
+  .tipInnerContainer {
+    width: span(12);
+  }
+
+  .tipContent {
+    font-size: 0.9em;
+  }
+
+  .tipImageContainer {
+
+    height: 100px;
+    max-height: 100px;
+    overflow: hidden;
+    margin-bottom: spacing();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include bp('tablet') {
+      height: 200px;
+      max-height: 200px;
+      width: span(12);
+    }
+
+    @include bp('large') {
+      margin-left: 0;
+      height: 200px;
+      max-height: 200px;
+      width: 100%;
+      float: none;
+      margin-bottom: spacing();
+    }
+  }
+
+  @media (min-width: $tablet) and (max-width: $desktop - 1) {
+    display: flex;
+    flex-direction: row;
+    .tipImageContainer {
+      width: span(5);
+      flex: 1 100%;
+      margin-right: spacing();
+      max-height: 150px;
+      margin-bottom: 0;
+    }
+    .tipInnerContainer {
+      padding-top: spacing();
+    }
+  }
+}
+
+.tip-error {
+  color: darken($main, 25%) !important;
+  height: 50% !important;
+  width: 50% !important;
+  margin: 15% 25%;
+}

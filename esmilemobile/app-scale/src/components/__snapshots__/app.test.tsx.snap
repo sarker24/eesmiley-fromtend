@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches snapshot 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "flex": 1,
+          "overflow": "hidden",
+        },
+        undefined,
+      ]
+    }
+  >
+    <RNCWebView
+      cacheEnabled={true}
+      injectedJavaScript="
+      const textContainer = document.createElement('div');
+      const versionTextNode = document.createTextNode('version 2.1.1');
+      textContainer.style.marginTop = '16px';
+      textContainer.style.paddingLeft = '24px';
+      textContainer.appendChild(versionTextNode);
+      document.body.appendChild(textContainer);
+      true;
+    "
+      injectedJavaScriptBeforeContentLoaded="
+     window.isScaleApp = true
+     true;
+    "
+      injectedJavaScriptBeforeContentLoadedForMainFrameOnly={true}
+      injectedJavaScriptForMainFrameOnly={true}
+      javaScriptEnabled={true}
+      messagingEnabled={true}
+      onContentProcessDidTerminate={[Function]}
+      onError={[Function]}
+      onHttpError={[Function]}
+      onLoadEnd={[Function]}
+      onLoadingError={[Function]}
+      onLoadingFinish={[Function]}
+      onLoadingProgress={[Function]}
+      onLoadingStart={[Function]}
+      onMessage={[Function]}
+      onShouldStartLoadWithRequest={[Function]}
+      source={
+        Object {
+          "uri": "https://app.esmiley.com/?client=scale",
+        }
+      }
+      style={
+        Array [
+          Object {
+            "flex": 1,
+            "overflow": "hidden",
+          },
+          Object {
+            "backgroundColor": "#ffffff",
+          },
+          Object {
+            "flex": 1,
+          },
+        ]
+      }
+      useSharedProcessPool={true}
+    />
+  </View>
+  <Modal
+    hardwareAccelerated={false}
+    visible={true}
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "height": "100%",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "testUri": "../../../resources/esmiley_icon_1024x1024.png",
+          }
+        }
+        style={
+          Object {
+            "height": 125,
+            "marginBottom": 50,
+            "width": 125,
+          }
+        }
+      />
+      <ActivityIndicator
+        animating={true}
+        color="#0084c7"
+        hidesWhenStopped={true}
+        size="large"
+      />
+    </View>
+  </Modal>
+</View>
+`;

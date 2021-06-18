@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar component should render 1`] = `
+<Avatar>
+  <WithStyles(ForwardRef(Avatar))
+    className=""
+    src="https://gravatar.com/avatar"
+  >
+    <ForwardRef(Avatar)
+      className=""
+      classes={
+        Object {
+          "circle": "MuiAvatar-circle",
+          "circular": "MuiAvatar-circular",
+          "colorDefault": "MuiAvatar-colorDefault",
+          "fallback": "MuiAvatar-fallback",
+          "img": "MuiAvatar-img",
+          "root": "MuiAvatar-root",
+          "rounded": "MuiAvatar-rounded",
+          "square": "MuiAvatar-square",
+        }
+      }
+      src="https://gravatar.com/avatar"
+    >
+      <div
+        className="MuiAvatar-root MuiAvatar-circle"
+      >
+        <img
+          className="MuiAvatar-img"
+          src="https://gravatar.com/avatar"
+        />
+      </div>
+    </ForwardRef(Avatar)>
+  </WithStyles(ForwardRef(Avatar))>
+</Avatar>
+`;
